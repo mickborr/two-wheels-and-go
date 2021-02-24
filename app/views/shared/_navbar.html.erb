@@ -1,6 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <%= image_tag "https://media.istockphoto.com/vectors/moped-thin-line-icon-public-transport-concept-scooter-sign-on-white-vector-id1257319132?b=1&k=6&m=1257319132&s=612x612&w=0&h=foRoVWoYQTTqDiHDX9LfDVQAfGCRyFkmovOmNyP8x80=" %>
+    2 Wheels & Go
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,17 +12,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Home", "#", class: "nav-link" %>
+        <%= link_to "Home", root_path, class: "nav-link" %>
       </li>
-      <li class="nav-item">
-        <%= link_to "Messages", "#", class: "nav-link" %>
+      <li class="nav-item active">
+        <%= link_to "All available vehicles", vehicles_path, class: "nav-link" %>
       </li>
-      <li class="nav-item dropdown">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "Action", "#", class: "dropdown-item" %>
-          <%= link_to "Another action", "#", class: "dropdown-item" %>
-        </div>
+      <li class="nav-item active">
+        <%= link_to "Manage my vehicle", "", class: "nav-link" %>
+      </li>
+      <li class="nav-item active">
+        <%= link_to "Sign up", "", class: "nav-link" %>
       </li>
     </ul>
   </div>
