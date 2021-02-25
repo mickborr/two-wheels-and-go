@@ -1,0 +1,29 @@
+body {
+  background-color: #F8F9FA;
+}
+
+.form {
+  margin-top: 80px;
+}
+
+.form h1 {
+  margin-bottom: 50px;
+}
+
+.input {
+  color: blueviolet;
+}
+
+.submit {
+  border-radius: 4px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  background-color: $green;
+  border-color: $green;
+}
+
+.submit:hover {
+  background-color: white;
+  border-color: $green;
+  color: $green;
+}
