@@ -5,13 +5,17 @@ class VehiclesController < ApplicationController
   end
 
   def new
-    @user = current_user
     @vehicle = Vehicle.new
   end
 
   def create
-    @vehicle.create(vehicle_params)
-    redirect_to vehicles_path
+    @vehicle = Vehicle.new(vehicle_params)
+    @vehicle.user = current_user
+    if @vehicle.save!
+      redirect_to vehicles_path, notice: 'You successfully added a new vehicle.'
+    else
+      render :new
+    end
   end
 
   private

@@ -1,0 +1,7 @@
+<%= simple_form_for(@vehicle) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :category, collection: ['motorbike', 'electric motorbike', 'bicycle', 'electric bicycle', 'scooter', 'electric scooter', 'kick scooter', 'electric kick scooter'] %>
+  <%= f.input :cost_per_day %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
