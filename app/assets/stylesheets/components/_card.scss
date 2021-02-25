@@ -1,8 +1,9 @@
 //card for vehicle list
 .card-trip {
   overflow: hidden;
-  background: white;
+  background: #EAEAEA;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 8px;
 }
 
 .card-trip > img {
@@ -37,4 +38,9 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.btn-two-wheels{
+  background-color: #81C14B;
+  color: white;
 }

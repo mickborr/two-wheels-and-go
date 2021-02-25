@@ -1,4 +1,4 @@
-<div class="container my-4">
+<div class="vehicles-container">
   <h1>All available two wheel vehicles</h1>
   <div class="vehicle-list">
     <% @vehicles.each do |vehicle| %>
@@ -8,7 +8,7 @@
           <div>
             <h2><%= vehicle.name %></h2>
             <p><%= vehicle.description %></p>
-             <%= link_to "More details", "#", class: "btn btn-primary" %>
+             <%= link_to "More details", "#", class: "btn btn-two-wheels" %>
           </div>
           <h2 class="card-trip-pricing">£99.99</h2>
           <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
