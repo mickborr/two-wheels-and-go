@@ -1,0 +1,19 @@
+<div class="container my-4">
+  <h1>All available two wheel vehicles</h1>
+  <div class="vehicle-list">
+    <% @vehicles.each do |vehicle| %>
+      <div class="card-trip">
+        <img src="https://www.motoslignon.ch/wp-content/uploads/2020/12/323455_21ym_vision_110_256.jpg" />
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= vehicle.name %></h2>
+            <p><%= vehicle.description %></p>
+             <%= link_to "More details", "#", class: "btn btn-primary" %>
+          </div>
+          <h2 class="card-trip-pricing">£99.99</h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
