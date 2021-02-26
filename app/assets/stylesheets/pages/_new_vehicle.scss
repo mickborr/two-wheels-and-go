@@ -4,14 +4,15 @@ body {
 
 .form {
   margin-top: 80px;
+  padding: 40px;
 }
 
 .form h1 {
   margin-bottom: 50px;
 }
 
-.input {
-  color: blueviolet;
+.form-control {
+  background-color: $light-gray;
 }
 
 .submit {
