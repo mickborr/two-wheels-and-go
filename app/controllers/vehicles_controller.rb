@@ -19,6 +19,10 @@ class VehiclesController < ApplicationController
     end
   end
 
+  def show
+    @vehicle = Vehicle.find_by(id: params[:id])
+  end
+
   private
 
   def vehicle_params

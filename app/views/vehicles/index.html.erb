@@ -8,7 +8,7 @@
           <div class="card-trip-description">
             <h2><%= vehicle.name %></h2>
             <p><%= truncate vehicle.description, length: 50  %></p>
-             <%= link_to "More details", "#", class: "btn btn-two-wheels" %>
+             <%= link_to "More details", vehicle_path(vehicle), class: "btn btn-two-wheels" %>
           </div>
           <h2 class="card-trip-pricing"><%= vehicle.cost_per_day %> CHF.-</h2>
           <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
