@@ -5,12 +5,12 @@
       <div class="card-trip">
         <img src="https://www.motoslignon.ch/wp-content/uploads/2020/12/323455_21ym_vision_110_256.jpg" />
         <div class="card-trip-infos">
-          <div>
+          <div class="card-trip-description">
             <h2><%= vehicle.name %></h2>
-            <p><%= vehicle.description %></p>
+            <p><%= truncate vehicle.description, length: 50  %></p>
              <%= link_to "More details", "#", class: "btn btn-two-wheels" %>
           </div>
-          <h2 class="card-trip-pricing">£99.99</h2>
+          <h2 class="card-trip-pricing"><%= vehicle.cost_per_day %></h2>
           <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
         </div>
       </div>
