@@ -1,7 +1,7 @@
 <section class="jumbotron text-center">
   <div class="container">
     <div class='vehicle-banner-show'>
-      <%= image_tag 'vehicle.jpeg' %>
+      <%= image_tag(@vehicle.img_url) %>
     </div>
   </div>
 </section>
@@ -15,7 +15,7 @@
         <p><%= @vehicle.description %></p>
       </div>
       <div class='col-4 col-lg-4'>
-        <h5>Price per day</h5>
+        <h5>Price per day <strong><%= @vehicle.cost_per_day %> CHF .-</strong> </h5>
 
          <%= link_to "Book", '#', class: "mt-5 btn btn-dark" %>
       </div>

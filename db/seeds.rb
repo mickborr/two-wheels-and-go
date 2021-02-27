@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Destroy users"
+User.destroy_all
 puts "Create users"
 User.create(email: "jean@lewagon.com", nick_name: "jean123", first_name: "Jean",
   last_name: "le maire", phone_number: "079 135 34 76", password: "123456")
@@ -26,10 +28,13 @@ User.create(email: "Meline@lewagon.com", nick_name: "Meline123", first_name: "Me
 
 puts User.count
 
+puts "Destroy vehicles"
+Vehicle.destroy_all
+
 puts "Create vehicles"
 
 Vehicle.create(description: "This is a super electric bicycle with battery long range",
-  name: "electric bike", cost_per_day: 22.70, category: "electric bicycle", user: User.all.sample img_url: "https://www.bricoetloisirs.ch/img/products/930Wx620H/5626143_001.jpg?_=1511605617684
+  name: "electric bike", cost_per_day: 22.70, category: "electric bicycle", user: User.all.sample, img_url: "https://www.bricoetloisirs.ch/img/products/930Wx620H/5626143_001.jpg?_=1511605617684
 ")
 
 Vehicle.create(description: "This is a super electric scooter with battery long range",
@@ -42,7 +47,7 @@ Vehicle.create(description: "Come to try the new motorbike super confortable for
   name: "motorbike", cost_per_day: 22.70, category: "motorbike", user: User.all.sample, img_url: "https://4cd4cj14l1sc1dgwgl3o3ja5-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/RIEJU-Moto-MRT-125-SM-PRO.jpg")
 
 Vehicle.create(description: "This is a great motorbike with helmet box",
-  name: "motorbike", cost_per_day: 22.70, category: "scooter", user: User.all.sample, img_url: "https://lh3.googleusercontent.com/proxy/reTsuJf75tx3z-rtSLFpl6gRvYf_ALF__4xybce-0eiX-BfyE[…]6vGJnJfjIV8OOOHj18O38HXBB3AcBLL0pmBS5rmSn2JUFzuqIycQCQ8Q")
+  name: "motorbike", cost_per_day: 22.70, category: "scooter", user: User.all.sample, img_url: "https://cafe-racer-only.com/IMG/jpg/sacoche-moto-cafe-racer-givi-20.jpg")
 
 puts Vehicle.count
 
