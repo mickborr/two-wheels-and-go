@@ -37,7 +37,7 @@ Vehicle.create(description: "This is a super electric scooter with battery long 
 Vehicle.create(description: "This is a super electric motorbike with battery long range",
   name: "super electric bike", cost_per_day: 60, category: "electric motorbike", user: User.all.sample)
 
-Vehicle.create(description: "Come to try my new motorbike super confortable for long road trips",
+Vehicle.create(description: "Come to try the new motorbike super confortable for long road trips",
   name: "motorbike", cost_per_day: 22.70, category: "motorbike", user: User.all.sample)
 
 Vehicle.create(description: "This is a great scooter with helmet box",
