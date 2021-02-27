@@ -5,4 +5,5 @@ class Vehicle < ApplicationRecord
      'electric scooter', 'kick scooter', 'electric kick scooter'] }
   validates :description, length: { in: 20..350 }, presence: true
   validates :name, :cost_per_day, presence: true
+  has_one_attached :photo
 end
