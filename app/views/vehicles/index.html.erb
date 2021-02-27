@@ -3,7 +3,7 @@
   <div class="vehicle-list">
     <% @vehicles.each do |vehicle| %>
       <div class="card-trip">
-        <img src="https://www.motoslignon.ch/wp-content/uploads/2020/12/323455_21ym_vision_110_256.jpg" />
+        <img src=<%= vehicle.img_url %> />
         <div class="card-trip-infos">
           <div class="card-trip-description">
             <h2><%= vehicle.name %></h2>
