@@ -12,9 +12,11 @@
   </head>
 
   <body>
+    <p class="alert"><%= alert %></p>
+
     <%= render 'shared/navbar' %>
     <main role="main">
-      <%= render 'layouts/shared/flash_messages' %>
+      <%= render 'layouts/shared/flashes' %>
       <%= yield %>
     </main>
     <%= render 'shared/footer' %>
