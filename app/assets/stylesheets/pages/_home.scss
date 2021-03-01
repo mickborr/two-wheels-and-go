@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 
 .main-img {
-  background-image: image-url('banner-1.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), image-url('banner.jpg');
   background-position: center;
 }
 
@@ -12,4 +12,18 @@ body {
 .card {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
+.container-banner{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1, p {
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+}
+
+
 
