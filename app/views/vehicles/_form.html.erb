@@ -3,5 +3,6 @@
   <%= f.input :category, collection: ['motorbike', 'electric motorbike', 'bicycle', 'electric bicycle', 'scooter', 'electric scooter', 'kick scooter', 'electric kick scooter'] %>
   <%= f.input :cost_per_day %>
   <%= f.input :description %>
+  <%= f.input :photo, as: :file %>
   <%= f.button :submit, 'Add a new vehicle', class: 'submit btn btn-primary' %>
 <% end %>
