@@ -1,7 +1,9 @@
 <section class="jumbotron text-center">
   <div class="container">
     <div class='vehicle-banner-show'>
-      <%= image_tag(@vehicle.img_url) %>
+      <% if @vehicle.img_url %>
+        <%= image_tag(@vehicle.img_url) %>
+      <% end %>
     </div>
   </div>
 </section>
