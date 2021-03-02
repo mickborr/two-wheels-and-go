@@ -17,7 +17,11 @@
       <div class='col-4 col-lg-4'>
         <h5>Price per day <strong><%= @vehicle.cost_per_day %> CHF .-</strong> </h5>
 
-         <%= link_to "Book", '#', class: "mt-5 btn btn-dark" %>
+        <%= form_tag(bookings_path, method: 'post') do %>
+          <%= hidden_field_tag 'booking[vehicle_id]', @vehicle.id %>
+          <%= select_tag('booking[number_of_days]', options_for_select((1..10).to_a), prompt: 'Number of days to book', class: 'form-control') %>
+          <%= button_tag 'Book', class: 'mt-5 btn btn-dark' %>
+        <% end %>
       </div>
     </div>
   </div>
