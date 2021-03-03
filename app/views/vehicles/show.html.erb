@@ -1,4 +1,4 @@
-<section class="jumbotron text-center">
+<section class="jumbotron text-center bg-light">
   <div class="container">
     <div class='vehicle-banner-show'>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -10,7 +10,7 @@
         <div class=”carousel-inner”>
           <% @vehicle.photos.each_with_index do |p,i| %>
             <div class="carousel-item <%= "active" if i==0 %>">
-              <%= image_tag  p %>
+              <%= image_tag  p, height: 500, width: 600, crop: :fill %>
             </div>
           <% end %>
         </div>
@@ -27,7 +27,7 @@
   </div>
 </section>
 
-<div class="card mb-3">
+<div class="vehicle-card card mb-3">
   <div class="card-body">
     <div class='row'>
       <div class='col-8 col-lg-8'>
