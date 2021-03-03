@@ -1,12 +1,12 @@
 class BookingsController < ApplicationController
 
-  # TODO: List bookings
   def index
+    @bookings  = current_user.bookings.includes(:vehicle)
   end
 
   # POST /bookings
   def create
-    booking = Booking.new(booking_params)
+    booking = current_user.bookings.build(booking_params)
     if booking.save
       flash[:notice] = 'Booking successfully created!'
     else

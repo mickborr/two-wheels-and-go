@@ -1,7 +1,7 @@
 <section class="jumbotron text-center">
   <div class="container">
     <div class='vehicle-banner-show'>
-      <%= image_tag(@vehicle.img_url) %>
+      <%#= image_tag(@vehicle.img_url) %>
     </div>
   </div>
 </section>
@@ -19,7 +19,20 @@
 
         <%= form_tag(bookings_path, method: 'post') do %>
           <%= hidden_field_tag 'booking[vehicle_id]', @vehicle.id %>
-          <%= select_tag('booking[number_of_days]', options_for_select((1..10).to_a), prompt: 'Number of days to book', class: 'form-control') %>
+
+          <div class="input-group date mb-2" data-provide="datepicker" data-date-format="dd/mm/yyyy">
+              <%= text_field_tag 'booking[start_date]', '', placeholder: 'Enter Start Date', class: 'form-control' %>
+              <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-th"></span>
+              </div>
+          </div>
+
+          <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy">
+              <%= text_field_tag 'booking[end_date]', '', placeholder: 'Enter End Date', class: 'form-control' %>
+              <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-th"></span>
+              </div>
+          </div>
           <%= button_tag 'Book', class: 'mt-5 btn btn-dark' %>
         <% end %>
       </div>

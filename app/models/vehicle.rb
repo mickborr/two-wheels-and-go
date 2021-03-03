@@ -6,5 +6,4 @@ class Vehicle < ApplicationRecord
   validates :description, length: { in: 20..350 }, presence: true
   validates :name, :cost_per_day, presence: true
 
-  has_many :bookings
 end
