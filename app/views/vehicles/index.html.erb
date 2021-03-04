@@ -3,7 +3,7 @@
   <div class="vehicle-list">
     <% @vehicles.each do |vehicle| %>
       <div class="card-trip">
-        <%= cl_image_tag vehicle.photos[0] %>
+        <%= image_tag vehicle.photos[0] %>
         <div class="card-trip-infos">
           <div class="card-trip-description">
             <h2><%= vehicle.name %></h2>
