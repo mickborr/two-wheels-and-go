@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :vehicles, dependent: :destroy
   validates :email, :password, :nick_name, presence: true
   validates :nick_name, uniqueness: true
+  has_one_attached :photo
 end
