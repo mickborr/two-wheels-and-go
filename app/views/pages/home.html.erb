@@ -3,9 +3,15 @@
   <div class="container container-banner">
     <h1 class="jumbotron-heading text-white">Switzerland biggest online two wheels rental service</h1>
     <p class="lead text-white">Find the right vehicle in the right place, at the right price</p>
-    <p>
-      <a href="/vehicles" class="btn btn-success my-2">Choose Now</a>
-    </p>
+    <div class="search-vehicles homepage">
+      <%= form_tag vehicles_path, method: :get do %>
+        <%= select_tag :category, options_for_select(['motorbike', 'electric motorbike', 'bicycle', 'electric bicycle', 'scooter',
+       'electric scooter', 'kick scooter', 'electric kick scooter']), include_blank: "Select all",
+          class: "form-control"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary ml-1" %>
+      <% end %>
+    </div>
   </div>
 </section>
 
