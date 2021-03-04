@@ -8,10 +8,16 @@
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
         </ol>
         <div class=”carousel-inner”>
-          <% @vehicle.photos.each_with_index do |p,i| %>
-            <div class="carousel-item <%= "active" if i==0 %>">
-              <%= image_tag  p, height: 600, width: 800, crop: :fill %>
+          <% if @vehicle.photos[0] == nil %>
+            <div class="carousel-item <%= "active" %>">
+              <%= image_tag "https://media.istockphoto.com/vectors/moped-thin-line-icon-public-transport-concept-scooter-sign-on-white-vector-id1257319132?b=1&k=6&m=1257319132&s=612x612&w=0&h=foRoVWoYQTTqDiHDX9LfDVQAfGCRyFkmovOmNyP8x80=" %>
             </div>
+          <% else %>
+            <% @vehicle.photos.each_with_index do |p,i| %>
+              <div class="carousel-item <%= "active" if i==0 %>">
+                <%= image_tag  p, height: 600, width: 800, crop: :fill %>
+              </div>
+            <% end %>
           <% end %>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
