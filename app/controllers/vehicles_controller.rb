@@ -22,6 +22,25 @@ class VehiclesController < ApplicationController
       render :new
     end
   end
+  def edit
+    @vehicle = Vehicle.find(params[:id])
+  end
+
+  def update
+    @vehicle = Vehicle.find(params[:id])
+    @vehicle.update(vehicle_params)
+    redirect_to my_vehicles_path, notice: 'You successfully update your vehicle.'
+  end
+
+  def my_vehicles
+    @vehicles = Vehicle.where(user: current_user)
+  end
+
+  def destroy
+    @vehicle = Vehicle.find(params[:id])
+    @vehicle.delete
+    redirect_to my_vehicles_path
+  end
 
   def show
     @vehicle = Vehicle.find_by(id: params[:id])
