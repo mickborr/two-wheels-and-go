@@ -1,0 +1,31 @@
+<section class="jumbotron text-center">
+  <div class="container">
+    <div class='vehicle-banner-show'>
+      <% if @vehicle.img_url %>
+        <%= image_tag(@vehicle.img_url) %>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<div class="card mb-3">
+  <div class="card-body">
+    <div class='row'>
+      <div class='col-6 col-lg-6'>
+        <%= simple_form_for(@vehicle) do |f| %>
+          <h5><%= f.input :name %></h5>
+          <h5 class='pt-2'><%= f.input :category, collection: ['motorbike', 'electric motorbike', 'bicycle', 'electric bicycle', 'scooter', 'electric scooter', 'kick scooter', 'electric kick scooter'] %></h5>
+          <h5><%= f.input :cost_per_day %></h5>
+          <h5><%= f.input :description %></h5>
+          <%= f.button :submit, 'Update', class: 'submit btn btn-primary' %>
+        <% end %>
+      </div>
+      <div class='col-4 col-lg-4'>
+        <%= link_to "Delete", vehicle_path(@vehicle), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-delete" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

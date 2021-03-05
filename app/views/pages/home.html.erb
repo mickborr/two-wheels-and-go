@@ -1,11 +1,17 @@
 
-<section class="jumbotron text-center main-img" style="height: 60vh;">
-  <div class="container">
-    <h1 class="jumbotron-heading text-white">Two wheels and go</h1>
-    <p class="lead text-white">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
-    <p>
-      <a href="/vehicles" class="btn btn-success my-2">List all vehicles</a>
-    </p>
+<section class="jumbotron text-center main-img" style="height: 70vh;">
+  <div class="container container-banner">
+    <h1 class="jumbotron-heading text-white">Switzerland biggest online two wheels rental service</h1>
+    <p class="lead text-white">Find the right vehicle in the right place, at the right price</p>
+    <div class="search-vehicles homepage">
+      <%= form_tag vehicles_path, method: :get do %>
+        <%= select_tag :category, options_for_select(['motorbike', 'electric motorbike', 'bicycle', 'electric bicycle', 'scooter',
+       'electric scooter', 'kick scooter', 'electric kick scooter']), include_blank: "Select all",
+          class: "form-control"
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary ml-1" %>
+      <% end %>
+    </div>
   </div>
 </section>
 
@@ -17,7 +23,7 @@
         <div class="card mb-4 box-shadow">
           <%= image_tag 'card-3.png', class: 'card-img-top' %>
           <div class="card-body">
-            <p class="card-text"><strong>This is a wider card with </strong> supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h4 class="card-text"><strong> Online safe and secure payments </strong></h4>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
               </div>
@@ -29,7 +35,7 @@
         <div class="card mb-4 box-shadow">
           <%= image_tag 'card-2.jpg', class: 'card-img-top' %>
           <div class="card-body">
-            <p class="card-text"><strong>This is a wider card with </strong> supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h4 class="card-text"><strong>Best choice of 2 wheels in Switzerland</strong></h4>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
               </div>
@@ -41,7 +47,7 @@
         <div class="card mb-4 box-shadow">
           <%= image_tag 'card-3.jpg', class: 'card-img-top' %>
           <div class="card-body">
-            <p class="card-text"><strong>This is a wider card with </strong> supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <h4 class="card-text"><strong>Great selection of electric bikes </strong></h4>
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
               </div>

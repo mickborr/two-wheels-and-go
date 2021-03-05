@@ -42,9 +42,26 @@
         <p><%= @vehicle.description %></p>
       </div>
       <div class='col-4 col-lg-4'>
-        <h5>Price per day</h5>
+        <h5>Price per day <strong><%= @vehicle.cost_per_day %> CHF .-</strong> </h5>
 
-         <%= link_to "Book", '#', class: "mt-5 btn btn-dark" %>
+        <%= form_tag(bookings_path, method: 'post') do %>
+          <%= hidden_field_tag 'booking[vehicle_id]', @vehicle.id %>
+
+          <div class="input-group date mb-2" data-provide="datepicker" data-date-format="dd/mm/yyyy">
+              <%= text_field_tag 'booking[start_date]', '', placeholder: 'Enter Start Date', class: 'form-control' %>
+              <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-th"></span>
+              </div>
+          </div>
+
+          <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy">
+              <%= text_field_tag 'booking[end_date]', '', placeholder: 'Enter End Date', class: 'form-control' %>
+              <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-th"></span>
+              </div>
+          </div>
+          <%= button_tag 'Book', class: 'mt-5 btn btn-dark' %>
+        <% end %>
       </div>
     </div>
   </div>

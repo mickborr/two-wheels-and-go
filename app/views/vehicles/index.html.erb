@@ -1,5 +1,15 @@
 <div class="vehicles-container">
   <h1>All available two wheel vehicles</h1>
+  <div class="search-vehicles">
+    <%= form_tag vehicles_path, method: :get do %>
+      <%= select_tag :category, options_for_select(['motorbike', 'electric motorbike', 'bicycle', 'electric bicycle', 'scooter',
+     'electric scooter', 'kick scooter', 'electric kick scooter']), prompt: params[:category], include_blank: "Select all",
+        class: "form-control"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary ml-1" %>
+    <% end %>
+  </div>
+
   <div class="vehicle-list">
     <% @vehicles.each do |vehicle| %>
       <div class="card-trip">

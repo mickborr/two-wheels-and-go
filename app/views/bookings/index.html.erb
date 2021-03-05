@@ -1,0 +1,19 @@
+<div class="vehicles-container">
+  <h1>My reservations</h1>
+  <div class="vehicle-list">
+    <% @bookings.each do |booking| %>
+      <div class="card-trip">
+        <img src=<%= booking.vehicle.img_url %> />
+        <div class="card-trip-infos">
+          <div class="card-trip-description">
+            <p>Start Date: <%= booking.start_date&.to_date %></p>
+            <p>End Date: <%= booking.end_date&.to_date %></p>
+          </div>
+
+          <h2 class="card-trip-pricing"><%= booking.total_cost %> CHF.-</h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
