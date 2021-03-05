@@ -9,10 +9,21 @@ class BookingsController < ApplicationController
     booking = current_user.bookings.build(booking_params)
     if booking.save
       flash[:notice] = 'Booking successfully created!'
+      redirect_to my_bookings_path
+    else
+      flash[:error] = booking.errors.full_messages.join(',')
+      redirect_back(fallback_location: root_path)
+    end
+  end
+
+  def destroy
+    booking = Booking.find_by(id: params[:id])
+    if booking.destroy
+      flash[:notice] = 'Booking successfully destroyed!'
     else
       flash[:error] = booking.errors.full_messages.join(',')
     end
-    redirect_back(fallback_location: root_path)
+    redirect_to my_bookings_path
   end
 
   private
