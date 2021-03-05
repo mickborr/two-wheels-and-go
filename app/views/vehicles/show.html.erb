@@ -15,7 +15,7 @@
           <% else %>
             <% @vehicle.photos.each_with_index do |p,i| %>
               <div class="carousel-item <%= "active" if i==0 %>">
-                <%= image_tag  p, height: 600, width: 800, crop: :fill %>
+                <%= image_tag  p, height: 500, width: 800, crop: :fill %>
               </div>
             <% end %>
           <% end %>
