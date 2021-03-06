@@ -26,7 +26,7 @@
             <p><%= truncate vehicle.description, length: 50  %></p>
              <%= link_to "More details", vehicle_path(vehicle), class: "btn btn-two-wheels" %>
           </div>
-          <h2 class="card-trip-pricing"><%= vehicle.cost_per_day %> CHF.-</h2>
+          <h2 class="card-trip-pricing">CHF <%= vehicle.cost_per_day %></h2>
           <%= cl_image_tag vehicle.user.photo.key, :cloud_name => 'dme592otk', class:"card-trip-user avatar-bordered" %>
         </div>
       </div>
