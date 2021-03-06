@@ -1,9 +1,14 @@
 //card for vehicle list
+.cards-container{
+  display: flex;
+}
+
 .card-trip {
   overflow: hidden;
   background: #EAEAEA;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 8px;
+  max-height: 330px;
 }
 
 .card-trip > img {

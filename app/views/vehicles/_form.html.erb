@@ -1,6 +1,8 @@
 <%= simple_form_for(@vehicle) do |f| %>
   <%= f.input :name %>
   <%= f.input :category, collection: ['motorbike', 'electric motorbike', 'bicycle', 'electric bicycle', 'scooter', 'electric scooter', 'kick scooter', 'electric kick scooter'] %>
+  <%= f.input :city %>
+  <%= f.input :address %>
   <%= f.input :cost_per_day %>
   <%= f.input :description %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
