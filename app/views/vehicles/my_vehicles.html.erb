@@ -1,0 +1,21 @@
+<div class="vehicles-container">
+  <h1>My two wheel vehicles</h1>
+  <div class="vehicle-list">
+    <% @vehicles.each do |vehicle| %>
+      <div class="card-trip">
+        <img src=<%= vehicle.img_url %> />
+        <div class="card-trip-infos">
+          <div class="card-trip-description">
+            <h2><%= vehicle.name %></h2>
+            <p><%= truncate vehicle.description, length: 50  %></p>
+            <%= link_to "Delete", vehicle_path(vehicle), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-delete" %>
+
+            <%= link_to "Edit", edit_vehicle_path(vehicle), class: "btn btn-two-wheels" %>
+          </div>
+          <h2 class="card-trip-pricing"><%= vehicle.cost_per_day %> CHF.-</h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

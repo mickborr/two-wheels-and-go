@@ -24,6 +24,8 @@ require("channels")
 
 // External imports
 import "bootstrap";
+require('bootstrap-datepicker')
+import 'bootstrap-datepicker/dist/css/bootstrap-datepicker3';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
