@@ -7,6 +7,9 @@ class VehiclesController < ApplicationController
     else
       @vehicles = Vehicle.all
     end
+    @markers = @vehicles.map do |vehicle|
+      { lat: vehicle.latitude, lng: vehicle.longitude }
+    end
   end
 
   def new
@@ -16,6 +19,7 @@ class VehiclesController < ApplicationController
   def create
     @vehicle = Vehicle.new(vehicle_params)
     @vehicle.user = current_user
+    @vehicle.country = "Switzerland"
     if @vehicle.save!
       redirect_to vehicles_path, notice: 'You successfully added a new vehicle.'
     else
