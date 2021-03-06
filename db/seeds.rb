@@ -34,20 +34,24 @@ Vehicle.destroy_all
 puts "Create vehicles"
 
 Vehicle.create(description: "This is a super electric bicycle with battery long range",
-  name: "electric bike", cost_per_day: 22.70, category: "electric bicycle", user: User.all.sample, img_url: "https://www.bricoetloisirs.ch/img/products/930Wx620H/5626143_001.jpg?_=1511605617684
-")
+  name: "electric bike", cost_per_day: 22.70, category: "electric bicycle", user: User.all.sample, img_url: "https://www.bricoetloisirs.ch/img/products/930Wx620H/5626143_001.jpg?_=1511605617684",
+  address: "Rue du village 8", city: "le mont-sur-lausanne")
 
 Vehicle.create(description: "This is a super electric scooter with battery long range",
-  name: "electric scooter", cost_per_day: 10, category: "electric scooter", user: User.all.sample, img_url: "https://www.ebike-generation.com/img/catalogue/scooter-electrique/niu-n-series.jpg")
+  name: "electric scooter", cost_per_day: 10, category: "electric scooter", user: User.all.sample, img_url: "https://www.ebike-generation.com/img/catalogue/scooter-electrique/niu-n-series.jpg",
+  address: "Place de la Gare 4", city: "Renens")
 
 Vehicle.create(description: "This is a super electric motorbike with battery long range",
-  name: "super electric bike", cost_per_day: 60, category: "electric motorbike", user: User.all.sample, img_url: "https://www.ebike-generation.com/img/catalogue/moto/electric-motion-emlite.jpg")
+  name: "super electric bike", cost_per_day: 60, category: "electric motorbike", user: User.all.sample, img_url: "https://www.ebike-generation.com/img/catalogue/moto/electric-motion-emlite.jpg",
+  address: "Chemin de Montelly 43A", city: "Lausanne")
 
 Vehicle.create(description: "Come to try the new motorbike super confortable for long road trips",
-  name: "motorbike", cost_per_day: 22.70, category: "motorbike", user: User.all.sample, img_url: "https://4cd4cj14l1sc1dgwgl3o3ja5-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/RIEJU-Moto-MRT-125-SM-PRO.jpg")
+  name: "motorbike", cost_per_day: 22.70, category: "motorbike", user: User.all.sample, img_url: "https://4cd4cj14l1sc1dgwgl3o3ja5-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/RIEJU-Moto-MRT-125-SM-PRO.jpg",
+  address: "Chemin de Fontadel 2", city: "Prilly")
 
 Vehicle.create(description: "This is a great motorbike with helmet box",
-  name: "motorbike", cost_per_day: 22.70, category: "scooter", user: User.all.sample, img_url: "https://cafe-racer-only.com/IMG/jpg/sacoche-moto-cafe-racer-givi-20.jpg")
+  name: "motorbike", cost_per_day: 22.70, category: "scooter", user: User.all.sample, img_url: "https://cafe-racer-only.com/IMG/jpg/sacoche-moto-cafe-racer-givi-20.jpg",
+  address: "Rue du Grand-Chêne 7-9", city: "Lausanne")
 
 puts Vehicle.count
 
