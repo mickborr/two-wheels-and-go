@@ -23,7 +23,10 @@
           <%= link_to "Add a vehicle", new_user_session_path, class: "nav-link" %>
         </li>
         <li class="nav-item active">
-          <%= link_to "Sign in/Log in", new_user_session_path,class: "nav-link" %>
+          <%= link_to "Sign up", new_user_registration_path,class: "nav-link" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Log in", new_user_session_path,class: "nav-link" %>
         </li>
       <% elsif user_signed_in? %>
         <li class="nav-item active">
