@@ -3,7 +3,11 @@
   <div class="vehicle-list">
     <% @bookings.each do |booking| %>
       <div class="card-trip">
-        <img src=<%= booking.vehicle.img_url %> />
+        <% if booking.vehicle.photos[0] == nil %>
+          <%= image_tag "https://media.istockphoto.com/vectors/moped-thin-line-icon-public-transport-concept-scooter-sign-on-white-vector-id1257319132?b=1&k=6&m=1257319132&s=612x612&w=0&h=foRoVWoYQTTqDiHDX9LfDVQAfGCRyFkmovOmNyP8x80=" %>
+        <% else %>
+          <%= cl_image_tag booking.vehicle.photos[0].key, :cloud_name => 'dme592otk' %>
+        <% end %>
         <div class="card-trip-infos">
           <div class="card-trip-description">
             <p>Start Date: <%= booking.start_date&.to_date %></p>
@@ -11,7 +15,7 @@
           </div>
 
           <h2 class="card-trip-pricing"><%= booking.total_cost %> CHF.-</h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          <%= cl_image_tag booking.vehicle.user.photo.key, :cloud_name => 'dme592otk', class:"card-trip-user avatar-bordered" %>
         </div>
        <%= link_to 'Delete', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm m-2" %>
       </div>

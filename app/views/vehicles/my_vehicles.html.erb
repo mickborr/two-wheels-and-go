@@ -3,7 +3,11 @@
   <div class="vehicle-list">
     <% @vehicles.each do |vehicle| %>
       <div class="card-trip">
-        <img src=<%= vehicle.img_url %> />
+        <% if vehicle.photos[0] == nil %>
+          <%= image_tag "https://media.istockphoto.com/vectors/moped-thin-line-icon-public-transport-concept-scooter-sign-on-white-vector-id1257319132?b=1&k=6&m=1257319132&s=612x612&w=0&h=foRoVWoYQTTqDiHDX9LfDVQAfGCRyFkmovOmNyP8x80=" %>
+        <% else %>
+          <%= cl_image_tag vehicle.photos[0].key, :cloud_name => 'dme592otk' %>
+        <% end %>
         <div class="card-trip-infos">
           <div class="card-trip-description">
             <h2><%= vehicle.name %></h2>
@@ -13,7 +17,7 @@
             <%= link_to "Edit", edit_vehicle_path(vehicle), class: "btn btn-two-wheels" %>
           </div>
           <h2 class="card-trip-pricing"><%= vehicle.cost_per_day %> CHF.-</h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          <%= cl_image_tag vehicle.user.photo.key, :cloud_name => 'dme592otk', class:"card-trip-user avatar-bordered" %>
         </div>
       </div>
     <% end %>

@@ -1,10 +1,10 @@
 <%= simple_form_for(@vehicle) do |f| %>
   <%= f.input :name %>
   <%= f.input :category, collection: ['motorbike', 'electric motorbike', 'bicycle', 'electric bicycle', 'scooter', 'electric scooter', 'kick scooter', 'electric kick scooter'] %>
-  <%= f.input :city %>
-  <%= f.input :address %>
+  <%= f.input :city, required: true %>
+  <%= f.input :address, required: true %>
   <%= f.input :cost_per_day %>
   <%= f.input :description %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.input :photos, :cloud_name => 'dme592otk', as: :file, input_html: { multiple: true } %>
   <%= f.button :submit, 'Add a new vehicle', class: 'submit btn btn-primary' %>
 <% end %>
