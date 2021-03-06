@@ -33,7 +33,7 @@
           <%= link_to "All available vehicles", vehicles_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= cl_image_tag current_user.photo.key, :cloud_name => 'dme592otk', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "My vehicles", my_vehicles_path, class: "dropdown-item" %>
             <%= link_to "Add a vehicle", new_vehicle_path, class: "dropdown-item" %>
