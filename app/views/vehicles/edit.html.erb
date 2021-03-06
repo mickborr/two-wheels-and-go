@@ -1,16 +1,6 @@
-<section class="jumbotron text-center">
-  <div class="container">
-    <div class='vehicle-banner-show'>
-      <% if @vehicle.img_url %>
-        <%= image_tag(@vehicle.img_url) %>
-      <% end %>
-    </div>
-  </div>
-</section>
-
-<div class="card mb-3">
+<div class="card mb-3" id="card-edit">
   <div class="card-body">
-    <div class='row'>
+    <div class='row' id="card-row-edit">
       <div class='col-6 col-lg-6'>
         <%= simple_form_for(@vehicle) do |f| %>
           <h5><%= f.input :name %></h5>
