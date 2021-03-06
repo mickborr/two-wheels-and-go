@@ -8,7 +8,11 @@ class VehiclesController < ApplicationController
       @vehicles = Vehicle.all
     end
     @markers = @vehicles.map do |vehicle|
-      { lat: vehicle.latitude, lng: vehicle.longitude }
+      {
+        lat: vehicle.latitude,
+        lng: vehicle.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { vehicle: vehicle })
+      }
     end
   end
 
