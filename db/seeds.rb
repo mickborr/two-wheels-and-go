@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
+
 puts "Destroy users"
 User.destroy_all
 
@@ -13,47 +15,62 @@ Vehicle.destroy_all
 
 puts "Create users"
 
-User.create(email: "jean@lewagon.com", nick_name: "jean123", first_name: "Jean",
-  last_name: "le maire", phone_number: "079 135 34 76", password: "123456")
+file_user_1 = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+user = User.new(email: "jean@lewagon.com", nick_name: "jean123", first_name: "Jean",
+  last_name: "le maire", phone_number: "079 135 34 76", password: "123456", )
 
-User.create(email: "marie@lewagon.com", nick_name: "marie123", first_name: "marie",
-  last_name: "Leoni", phone_number: "079 100 98 17", password: "123456")
+user.photo.attach(io: file_user_1, filename: 'avatar.png', content_type: 'image/png')
+user.save!
 
-User.create(email: "Luc@lewagon.com", nick_name: "Luc123", first_name: "Luc",
-  last_name: "Lietard", phone_number: "076 184 09 74", password: "123456")
+# User.create(email: "jean@lewagon.com", nick_name: "jean123", first_name: "Jean",
+#   last_name: "le maire", phone_number: "079 135 34 76", password: "123456", )
 
-User.create(email: "Arnaud@lewagon.com", nick_name: "Arnaud123", first_name: "Arnaud",
-  last_name: "Montagny", phone_number: "077 612 45 37", password: "123456")
+# User.create(email: "marie@lewagon.com", nick_name: "marie123", first_name: "marie",
+#   last_name: "Leoni", phone_number: "079 100 98 17", password: "123456")
 
-User.create(email: "Eva@lewagon.com", nick_name: "Eva123", first_name: "Eva",
-  last_name: "Coupy", phone_number: "078 465 73 92", password: "123456")
+# User.create(email: "Luc@lewagon.com", nick_name: "Luc123", first_name: "Luc",
+#   last_name: "Lietard", phone_number: "076 184 09 74", password: "123456")
 
-User.create(email: "Meline@lewagon.com", nick_name: "Meline123", first_name: "Meline",
-  last_name: "Chanel", phone_number: "079 777 99 00", password: "123456")
+# User.create(email: "Arnaud@lewagon.com", nick_name: "Arnaud123", first_name: "Arnaud",
+#   last_name: "Montagny", phone_number: "077 612 45 37", password: "123456")
+
+# User.create(email: "Eva@lewagon.com", nick_name: "Eva123", first_name: "Eva",
+#   last_name: "Coupy", phone_number: "078 465 73 92", password: "123456")
+
+# User.create(email: "Meline@lewagon.com", nick_name: "Meline123", first_name: "Meline",
+#   last_name: "Chanel", phone_number: "079 777 99 00", password: "123456")
 
 puts User.count
 
 puts "Create vehicles"
 
-Vehicle.create(description: "This is a super electric bicycle with battery long range",
-  name: "electric bike", cost_per_day: 22.70, category: "electric bicycle", user: User.all.sample, img_url: "https://www.bricoetloisirs.ch/img/products/930Wx620H/5626143_001.jpg?_=1511605617684",
+file_1 = URI.open('https://www.bricoetloisirs.ch/img/products/930Wx620H/5626143_001.jpg?_=1511605617684')
+vehicle = Vehicle.new(description: "This is a super electric bicycle with battery long range",
+  name: "electric bike", cost_per_day: 22.70, category: "electric bicycle", user: User.all.sample,
   address: "Rue du village 8", city: "le mont-sur-lausanne", country: "Switzerland")
 
-Vehicle.create(description: "This is a super electric scooter with battery long range",
-  name: "electric scooter", cost_per_day: 10, category: "electric scooter", user: User.all.sample, img_url: "https://www.ebike-generation.com/img/catalogue/scooter-electrique/niu-n-series.jpg",
-  address: "Place de la Gare 4", city: "Renens", country: "Switzerland")
+vehicle.photos.attach(io: file_1, filename: 'nes.jpg', content_type: 'image/jpg')
+vehicle.save!
 
-Vehicle.create(description: "This is a super electric motorbike with battery long range",
-  name: "super electric bike", cost_per_day: 60, category: "electric motorbike", user: User.all.sample, img_url: "https://www.ebike-generation.com/img/catalogue/moto/electric-motion-emlite.jpg",
-  address: "Chemin de Montelly 43A", city: "Lausanne", country: "Switzerland")
+# Vehicle.create(description: "This is a super electric bicycle with battery long range",
+#   name: "electric bike", cost_per_day: 22.70, category: "electric bicycle", user: User.all.sample, img_url: "https://www.bricoetloisirs.ch/img/products/930Wx620H/5626143_001.jpg?_=1511605617684",
+#   address: "Rue du village 8", city: "le mont-sur-lausanne", country: "Switzerland")
 
-Vehicle.create(description: "Come to try the new motorbike super confortable for long road trips",
-  name: "motorbike", cost_per_day: 22.70, category: "motorbike", user: User.all.sample, img_url: "https://4cd4cj14l1sc1dgwgl3o3ja5-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/RIEJU-Moto-MRT-125-SM-PRO.jpg",
-  address: "Chemin de Fontadel 2", city: "Prilly", country: "Switzerland")
+# Vehicle.create(description: "This is a super electric scooter with battery long range",
+#   name: "electric scooter", cost_per_day: 10, category: "electric scooter", user: User.all.sample, img_url: "https://www.ebike-generation.com/img/catalogue/scooter-electrique/niu-n-series.jpg",
+#   address: "Place de la Gare 4", city: "Renens", country: "Switzerland")
 
-Vehicle.create(description: "This is a great motorbike with helmet box",
-  name: "motorbike", cost_per_day: 22.70, category: "scooter", user: User.all.sample, img_url: "https://cafe-racer-only.com/IMG/jpg/sacoche-moto-cafe-racer-givi-20.jpg",
-  address: "Rue du Grand-Chêne 7-9", city: "Lausanne", country: "Switzerland")
+# Vehicle.create(description: "This is a super electric motorbike with battery long range",
+#   name: "super electric bike", cost_per_day: 60, category: "electric motorbike", user: User.all.sample, img_url: "https://www.ebike-generation.com/img/catalogue/moto/electric-motion-emlite.jpg",
+#   address: "Chemin de Montelly 43A", city: "Lausanne", country: "Switzerland")
+
+# Vehicle.create(description: "Come to try the new motorbike super confortable for long road trips",
+#   name: "motorbike", cost_per_day: 22.70, category: "motorbike", user: User.all.sample, img_url: "https://4cd4cj14l1sc1dgwgl3o3ja5-wpengine.netdna-ssl.com/wp-content/uploads/2020/07/RIEJU-Moto-MRT-125-SM-PRO.jpg",
+#   address: "Chemin de Fontadel 2", city: "Prilly", country: "Switzerland")
+
+# Vehicle.create(description: "This is a great motorbike with helmet box",
+#   name: "motorbike", cost_per_day: 22.70, category: "scooter", user: User.all.sample, img_url: "https://cafe-racer-only.com/IMG/jpg/sacoche-moto-cafe-racer-givi-20.jpg",
+#   address: "Rue du Grand-Chêne 7-9", city: "Lausanne", country: "Switzerland")
 
 puts Vehicle.count
 
